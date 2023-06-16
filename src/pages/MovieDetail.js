@@ -8,7 +8,6 @@ export const MovieDetail = () => {
 
   const [movie, setMovie] = useState({});
 
-  const url = `https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.REACT_APP_API_KEY}`;
 
   const image = movie.poster_path
     ? ` https://image.tmdb.org/t/p/w500/${movie.poster_path}`
@@ -16,14 +15,15 @@ export const MovieDetail = () => {
 
   useEffect(() => {
     async function fetchMovie() {
-      const response = await fetch(url);
+      const response = await fetch(
+        `https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.REACT_APP_API_KEY}`);
       const result = await response.json();
       setMovie(result);
-      console.log(result);
+    
     }
     fetchMovie();
-  }, [url]);
-  
+  }, [[params.id]]);
+
 useTitle(`${movie.title}`);
  
   return (
