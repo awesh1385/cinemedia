@@ -8,7 +8,6 @@ export const MovieDetail = () => {
 
   const [movie, setMovie] = useState({});
 
-
   const image = movie.poster_path
     ? ` https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : Backup;
@@ -16,16 +15,16 @@ export const MovieDetail = () => {
   useEffect(() => {
     async function fetchMovie() {
       const response = await fetch(
-        `https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.REACT_APP_API_KEY}`);
+        `https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.REACT_APP_API_KEY}`
+      );
       const result = await response.json();
       setMovie(result);
-    
     }
     fetchMovie();
-  }, [[params.id]]);
+  }, [params.id]);
 
-useTitle(`${movie.title}`);
- 
+  useTitle(`${movie.title}`);
+
   return (
     <main>
       <section className="flex justify-around flex-wrap py-5">

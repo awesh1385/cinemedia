@@ -32,7 +32,7 @@ export const Footer = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="https://twitter.com/i/flow/login"
               target="__blank"
               className="mr-4 hover:underline md:mr-6" refs="noreferrer"
             >
@@ -40,7 +40,7 @@ export const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="#" target="__blank" className=" hover:underline" refs="noreferrer">
+            <a href="https://www.instagram.com/" target="__blank" className=" hover:underline" refs="noreferrer">
               Instagram
             </a>
           </li>
